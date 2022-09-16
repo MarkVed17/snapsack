@@ -5,7 +5,7 @@ const Main = () => {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
-      <Route path="/post" element={<SinglePostPage />} />
+      <Route path="/post/:postname" element={<SinglePostPage />} />
     </Routes>
   );
 };
