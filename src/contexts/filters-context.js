@@ -23,7 +23,10 @@ const FilterProvider = ({ children }) => {
           (a, b) => a.data.created_utc - b.data.created_utc
         );
       case "Top":
-        return [...posts].sort((a, b) => a.data.ups - b.data.ups);
+        return [...posts].sort(
+          (a, b) =>
+            a.data.ups + a.data.num_comments - b.data.ups + b.data.num_comments
+        );
 
       default:
         return posts;
