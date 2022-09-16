@@ -11,21 +11,20 @@ const FilterProvider = ({ children }) => {
     switch (filterBy) {
       case "Best":
         return [...posts].sort(
-          (a, b) => a.data.upvote_ratio - b.data.upvote_ratio
+          (a, b) => b.data.upvote_ratio - a.data.upvote_ratio
         );
       case "Hot":
         return [...posts].sort(
           (a, b) =>
-            a.data.ups * a.data.created_utc - b.data.ups * b.data.created_utc
+            b.data.ups * b.data.created_utc - a.data.ups * a.data.created_utc
         );
       case "New":
         return [...posts].sort(
-          (a, b) => a.data.created_utc - b.data.created_utc
+          (a, b) => b.data.created_utc - a.data.created_utc
         );
       case "Top":
         return [...posts].sort(
-          (a, b) =>
-            a.data.ups + a.data.num_comments - b.data.ups + b.data.num_comments
+          (a, b) => b.data.total_awards_received - a.data.total_awards_received
         );
 
       default:
