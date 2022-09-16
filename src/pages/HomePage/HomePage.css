@@ -1,3 +1,7 @@
+.filters-container {
+  display: flex;
+}
+
 .posts-container {
   display: flex;
   flex-wrap: wrap;
