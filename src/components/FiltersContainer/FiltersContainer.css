@@ -1,0 +1,21 @@
+.filters-container {
+  display: flex;
+  gap: 1rem;
+  width: fit-content;
+  margin: 2rem auto;
+}
+
+.filter-chip {
+  width: 3rem;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 1rem;
+  border: none;
+  border-radius: 2px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  cursor: pointer;
+}
+
+.filter-chip:hover {
+  background-color: aliceblue;
+}
