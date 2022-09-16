@@ -16,25 +16,37 @@ const HomePage = () => {
   };
 
   return (
-    <div>
+    <div className="main-content">
       <div className="filters-container">
-        <button onClick={filterHandler}>Best</button>
-        <button onClick={filterHandler}>Hot</button>
-        <button onClick={filterHandler}>New</button>
-        <button onClick={filterHandler}>Top</button>
+        <button className="filter-chip" onClick={filterHandler}>
+          Best
+        </button>
+        <button className="filter-chip" onClick={filterHandler}>
+          Hot
+        </button>
+        <button className="filter-chip" onClick={filterHandler}>
+          New
+        </button>
+        <button className="filter-chip" onClick={filterHandler}>
+          Top
+        </button>
       </div>
       <div className="posts-container">
         {posts &&
-          filteredPosts.map(({ data: { title, thumbnail, name } }) => (
-            <div
-              key={name}
-              className="post"
-              onClick={() => {
-                navigate(`/post/${name}`);
-              }}
-            >
-              <h1>{title}</h1>
-              <img src={thumbnail} alt={title} />
+          filteredPosts.map(({ data: { title, thumbnail, name, author } }) => (
+            <div key={name} className="post">
+              <img
+                src={thumbnail}
+                alt={title}
+                className="post-thumbnail"
+                onClick={() => {
+                  navigate(`/post/${name}`);
+                }}
+              />
+              <div className="post-text">
+                <h1 className="post-title">{title}</h1>
+                <h2 className="post-author">{author}</h2>
+              </div>
             </div>
           ))}
       </div>
