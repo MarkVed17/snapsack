@@ -38,3 +38,31 @@
 .material-symbols-outlined {
   font-size: 1.3rem;
 }
+
+@media (max-width: 479px) {
+  .single-post {
+    width: 20rem;
+  }
+
+  .single-post-title {
+    font-size: 1rem;
+  }
+
+  .single-post-author {
+    font-size: 10px;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 768px) {
+  .single-post {
+    width: 25rem;
+  }
+
+  .single-post-title {
+    font-size: 1.2rem;
+  }
+
+  .single-post-author {
+    font-size: 10px;
+  }
+}
