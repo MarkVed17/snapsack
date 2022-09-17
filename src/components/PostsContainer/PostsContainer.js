@@ -3,13 +3,19 @@ import { useNavigate } from "react-router-dom";
 import "./PostsContainer.css";
 
 const PostsContainer = () => {
-  const { posts } = usePosts();
+  const { loading } = usePosts();
   const { filteredPosts } = useFilter();
   const navigate = useNavigate();
 
   return (
     <div className="posts-container">
-      {posts &&
+      {loading ? (
+        <img
+          src="https://assets.materialup.com/uploads/21271351-3e4d-4868-8dd2-6caff188213e/preview.gif"
+          alt="Loading..."
+          className="loading"
+        />
+      ) : (
         filteredPosts.map(({ data: { title, thumbnail, name, author } }) => (
           <div key={name} className="post">
             <img
@@ -30,7 +36,8 @@ const PostsContainer = () => {
               <h2 className="post-author">{author}</h2>
             </div>
           </div>
-        ))}
+        ))
+      )}
     </div>
   );
 };
